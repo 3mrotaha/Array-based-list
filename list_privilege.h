@@ -4,6 +4,7 @@
 /*
 	pre: none
 	post: Initialize the list and returns enum(LIST_CREATED)
+	complexity: O(1)
 */
 ErrorStates_t CreateList(List_t*);
 
@@ -12,6 +13,7 @@ ErrorStates_t CreateList(List_t*);
 	post: - deletes the whole list elements
 	      - if the list is not empty, it returns (LIST_DESTROYED)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(1)
 */
 ErrorStates_t DestroyList(List_t*);
 
@@ -20,6 +22,7 @@ ErrorStates_t DestroyList(List_t*);
 	post: - checks if the list is empty or not
 	      - if the list is not empty, it returns (LIST_NOT_EMPTY)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(1)
 */
 ErrorStates_t ListEmpty(List_t);
 
@@ -28,6 +31,7 @@ ErrorStates_t ListEmpty(List_t);
 	post: - checks if the list is full or not
 	      - if the list is not full, it returns (LIST_NOT_FULL)
 		  - if the list is full, it returns (LIST_FULL)
+	complexity: O(1)
 */
 ErrorStates_t ListFull(List_t);
 
@@ -36,6 +40,7 @@ ErrorStates_t ListFull(List_t);
 	post: - gets the current size of the list
 	      - if the list is not empty, it returns (LIST_NOT_EMPTY)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(1)
 */
 ErrorStates_t ListSize(int*, List_t);
 
@@ -45,6 +50,7 @@ ErrorStates_t ListSize(int*, List_t);
 	post: - inserts an element to a specific index in the list
 	      - if the list is not full, it returns (LIST_INSERTION_DONE)
 		  - if the list is full, it returns (LIST_FULL)
+	complexity: O(N)
 */
 ErrorStates_t ListInsert(int, ListEntry, List_t*);
 
@@ -54,6 +60,7 @@ ErrorStates_t ListInsert(int, ListEntry, List_t*);
 	post: - deletes an element from a specific index in the list
 	      - if the list is not empty, it returns (LIST_DELETION_DONE)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(N)
 */
 ErrorStates_t ListDelete(int, ListEntry*, List_t*);
 
@@ -63,6 +70,7 @@ ErrorStates_t ListDelete(int, ListEntry*, List_t*);
 	post: - getd an element from a specific index in the list
 	      - if the list is not empty, it returns (LIST_RETRIVE_DONE)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(1)
 */
 ErrorStates_t ListRetrieve(int, ListEntry*, List_t);
 
@@ -72,6 +80,7 @@ ErrorStates_t ListRetrieve(int, ListEntry*, List_t);
 	post: - replace an element value in a specific index in the list
 	      - if the list is not empty, it returns (LIST_REPLACEMENT_DONE)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(1)
 */
 ErrorStates_t ListReplace(int, ListEntry, List_t*);
 
@@ -80,6 +89,7 @@ ErrorStates_t ListReplace(int, ListEntry, List_t*);
 	post: - enables the user to visit the list elements
 	      - if the list is not empty, it returns (LIST_TRAVERSED)
 		  - if the list is empty, it returns (LIST_EMPTY)
+	complexity: O(N)
 */
 ErrorStates_t ListTraverse(List_t, void (*) (ListEntry));
 
